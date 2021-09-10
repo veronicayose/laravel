@@ -21,6 +21,11 @@ Route::get('/hello', function () {
     return "Hello World";
 });
 
-Route::get('/motor/{jenis?}',function($jenis='Sport'){
+Route::get('/motor/{jenis?}',function($jenis=null){
+    if($jenis == null) return "Dashboard Page";
     return "Motor dengan jenis ".$jenis;
+});
+
+Route::get('/coba', function () {
+    return view('coba');
 });
