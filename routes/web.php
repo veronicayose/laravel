@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +32,8 @@ Route::get('/motor/{jenis?}',function($jenis=null){
 Route::get('/coba', function () {
     return view('coba');
 });
+
+
+// untuk mengambil ...
+Route::get('/book',[BookController::class, 'index']);
+Route::get('/vbook/{judul}', [BookController::class, 'viewJudul']);
